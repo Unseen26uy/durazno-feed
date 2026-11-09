@@ -1,5 +1,7 @@
 import { createHash } from "node:crypto";
+import { execFileSync } from "node:child_process";
 import fs from "node:fs/promises";
+import os from "node:os";
 import path from "node:path";
 
 // Copia las noticias públicas de durazno.uy a un JSON estable y espeja las imágenes
@@ -13,16 +15,38 @@ const MAX_ITEMS = Number(process.env.DURAZNO_MAX_ITEMS || 30);
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-async function fetchWithRetry(url, { attempts = 3, accept = "application/json", timeout = 45000 } = {}) {
+// Cloudflare deja pasar a curl pero responde 403 a fetch de Node, así que se usa curl.
+function curlToFile(url, out, { accept = "application/json", timeout = 45 } = {}) {
+  return execFileSync(
+    "curl",
+    [
+      "-sS",
+      "-L",
+      "--max-time",
+      String(timeout),
+      "-A",
+      UA,
+      "-H",
+      `Accept: ${accept}`,
+      "-H",
+      `Referer: ${HOME}/noticias`,
+      "-o",
+      out,
+      "-w",
+      "%{http_code}",
+      url
+    ],
+    { encoding: "utf8" }
+  ).trim();
+}
+
+async function download(url, out, { attempts = 3, accept = "application/json", timeout = 45 } = {}) {
   let lastError;
   for (let attempt = 1; attempt <= attempts; attempt += 1) {
     try {
-      const response = await fetch(url, {
-        signal: AbortSignal.timeout(timeout),
-        headers: { "User-Agent": UA, Accept: accept, Referer: `${HOME}/noticias` }
-      });
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      return response;
+      const code = curlToFile(url, out, { accept, timeout });
+      if (code !== "200") throw new Error(`HTTP ${code}`);
+      return;
     } catch (error) {
       lastError = error;
       if (attempt < attempts) await sleep(4000 * attempt);
@@ -48,8 +72,11 @@ function fileNameFor(url) {
   return `${createHash("sha1").update(url).digest("hex").slice(0, 24)}.${ext}`;
 }
 
-const response = await fetchWithRetry(API);
-const data = await response.json();
+const tmp = await fs.mkdtemp(path.join(os.tmpdir(), "durazno-"));
+const apiFile = path.join(tmp, "api.json");
+
+await download(API, apiFile);
+const data = JSON.parse(await fs.readFile(apiFile, "utf8"));
 const rows = (Array.isArray(data) ? data : data?.items || [])
   .filter((row) => row && row.titulo && row.alias)
   .slice(0, MAX_ITEMS);
@@ -86,11 +113,9 @@ for (const [name, src] of referenced) {
     /* falta: se descarga */
   }
   try {
-    const image = await fetchWithRetry(src, {
-      accept: "image/avif,image/webp,image/jpeg,image/png,image/*;q=0.8",
-      timeout: 30000
-    });
-    const bytes = Buffer.from(await image.arrayBuffer());
+    const tmpImage = path.join(tmp, name);
+    await download(src, tmpImage, { accept: "image/avif,image/webp,image/jpeg,image/png,image/*;q=0.8", timeout: 30 });
+    const bytes = await fs.readFile(tmpImage);
     if (!bytes.length) throw new Error("imagen vacía");
     await fs.writeFile(dest, bytes);
     downloaded += 1;
@@ -117,6 +142,7 @@ const payload = {
   items: prepared
 };
 await fs.writeFile("durazno.json", `${JSON.stringify(payload, null, 1)}\n`);
+await fs.rm(tmp, { recursive: true, force: true });
 
 const withImage = prepared.filter((item) => item.imagen).length;
 console.log(`noticias=${prepared.length} con_imagen=${withImage} imagenes_nuevas=${downloaded} imagenes_eliminadas=${removed}`);
