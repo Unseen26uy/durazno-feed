@@ -141,7 +141,24 @@ const payload = {
   api: API,
   items: prepared
 };
-await fs.writeFile("durazno.json", `${JSON.stringify(payload, null, 1)}\n`);
+
+// Solo se publica cuando cambia algo relevante (evita un commit cada 20 minutos).
+// `visitas` y otros campos volátiles de la API no se guardan.
+const KEEP = ["id", "titulo", "alias", "resumen", "contenido", "categoria_nombre", "fecha", "fecha_publicacion", "imagen", "og_imagen"];
+const stable = prepared.map((item) => Object.fromEntries(KEEP.map((key) => [key, item[key] ?? null])));
+
+let previous = null;
+try {
+  previous = JSON.parse(await fs.readFile("durazno.json", "utf8"));
+} catch {
+  /* primera ejecución */
+}
+
+if (previous && JSON.stringify(previous.items) === JSON.stringify(stable)) {
+  console.log("sin cambios: se conserva durazno.json");
+} else {
+  await fs.writeFile("durazno.json", `${JSON.stringify({ ...payload, items: stable }, null, 1)}\n`);
+}
 await fs.rm(tmp, { recursive: true, force: true });
 
 const withImage = prepared.filter((item) => item.imagen).length;
