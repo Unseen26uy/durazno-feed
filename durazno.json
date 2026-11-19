@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-19T00:09:21.980Z",
+ "generated_at": "2026-11-19T07:39:27.600Z",
  "source": "durazno.uy",
  "api": "https://durazno.uy/api/noticias?pagina=1&por_pagina=30",
  "items": [
@@ -11,9 +11,9 @@
    "contenido": "La actividad comenzará a las <b>08:00 horas</b> y se extenderá durante la jornada,<b> reuniendo a jugadores y aficionados de esta disciplina.</b><div><br><div>La entrada para el público será gratuita, mientras que la<b> inscripción para participar</b> en el torneo tendrá un costo de<b> $100.</b></div><div><br></div><div>Durante el encuentro habrá <b>venta de chorizos, panchos y tortas fritas</b>, ofreciendo una propuesta para <b>compartir una jornada de deporte y camaradería.</b></div><div><br></div><div>Por más información, los interesados pueden comunicarse al<b> 098 529 578.</b></div><div><br></div></div>",
    "categoria_nombre": "Noticias departamentales",
    "fecha": "18 de noviembre, 2026",
-   "fecha_publicacion": "2026-11-18T20:23:44.855799+00:00",
-   "imagen": "https://raw.githubusercontent.com/Unseen26uy/durazno-feed/main/media/9a96173364390e7cf74d9b50.jpg",
-   "og_imagen": "https://raw.githubusercontent.com/Unseen26uy/durazno-feed/main/media/9a96173364390e7cf74d9b50.jpg"
+   "fecha_publicacion": "2026-11-18T20:23:00+00:00",
+   "imagen": "https://raw.githubusercontent.com/Unseen26uy/durazno-feed/main/media/7cf3bf49ca379836f261d7b1.jpg",
+   "og_imagen": "https://raw.githubusercontent.com/Unseen26uy/durazno-feed/main/media/7cf3bf49ca379836f261d7b1.jpg"
   },
   {
    "id": 5952,
