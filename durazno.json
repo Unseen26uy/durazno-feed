@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-24T04:58:51.073Z",
+ "generated_at": "2026-11-25T00:31:55.410Z",
  "source": "durazno.uy",
  "api": "https://durazno.uy/api/noticias?pagina=1&por_pagina=30",
  "items": [
@@ -14,6 +14,18 @@
    "fecha_publicacion": "2026-11-09T18:12:00+00:00",
    "imagen": "https://raw.githubusercontent.com/Unseen26uy/durazno-feed/main/media/e18fcf65dd7f43dbaa23c662.jpg",
    "og_imagen": "https://raw.githubusercontent.com/Unseen26uy/durazno-feed/main/media/e18fcf65dd7f43dbaa23c662.jpg"
+  },
+  {
+   "id": 5969,
+   "titulo": "Infancias al Teatro llega a Durazno con dos funciones de «El Rey de los Hongos»",
+   "alias": "infancias-al-teatro-llega-a-durazno-con-dos-funciones-de-el-rey-de-los-hongos",
+   "resumen": "Este miércoles 25 de noviembre, el Centro Cultural Teatro Español será escenario de una nueva jornada del programa Infancias al Teatro, con dos funciones de la obra «El Rey de los Hongos», a las 10:00…",
+   "contenido": "Este miércoles 25 de noviembre, el Centro Cultural Teatro Español será escenario de una nueva jornada del programa Infancias al Teatro, con dos funciones de la obra «El Rey de los Hongos», a las 10:00 y 14:00 horas.<div><br></div><div>La actividad contará con la presencia del ministro de Educación y Cultura, José Carlos Mahía, y del asesor ministerial Diego Fachelli.</div><div><br></div><div>Infancias al Teatro es un programa impulsado por el Ministerio de Educación y Cultura (MEC), junto al Ministerio de Desarrollo Social (MIDES), el Instituto del Niño y Adolescente del Uruguay (INAU) y la Administración Nacional de Educación Pública (ANEP), que busca acercar espectáculos artísticos nacionales a niñas, niños y adolescentes de diferentes programas sociales y educativos, promoviendo el acceso a la cultura.</div><div><br></div><div>Una propuesta artística e inclusiva</div><div><span style=\"font-size: 0.875rem;\">«El Rey de los Hongos», con texto de Natacha Ortega y dirección de Tamara Couto, es un espectáculo musical que combina teatro y títeres e incorpora la Lengua de Señas Uruguaya (LSU) como parte integral de su dramaturgia.&nbsp;</span><span style=\"font-size: 0.875rem;\">La historia transcurre en un reino invadido por hongos, donde un rey que no escucha a sus súbditos deberá enfrentar una serie de acontecimientos que ponen en juego la convivencia, el poder y la búsqueda de la armonía.</span></div><div><br></div><div>La obra recibió siete nominaciones a los Premios Florencio en la categoría de espectáculos para infancias.</div>",
+   "categoria_nombre": "GOBIERNO",
+   "fecha": "24 de noviembre, 2026",
+   "fecha_publicacion": "2026-11-24T15:45:12.692749+00:00",
+   "imagen": "https://raw.githubusercontent.com/Unseen26uy/durazno-feed/main/media/973512e4536ba604dad31f4e.jpg",
+   "og_imagen": "https://raw.githubusercontent.com/Unseen26uy/durazno-feed/main/media/973512e4536ba604dad31f4e.jpg"
   },
   {
    "id": 5968,
@@ -350,18 +362,6 @@
    "fecha_publicacion": "2026-11-16T12:27:40.306381+00:00",
    "imagen": "https://raw.githubusercontent.com/Unseen26uy/durazno-feed/main/media/a4a24506e05bc1ccf5b00e9d.jpg",
    "og_imagen": "https://raw.githubusercontent.com/Unseen26uy/durazno-feed/main/media/a4a24506e05bc1ccf5b00e9d.jpg"
-  },
-  {
-   "id": 5940,
-   "titulo": "Durazno recibió a equipos de Uruguay y Argentina en el Torneo de Newcom “Amigos de Capibaras”",
-   "alias": "durazno-recibe-a-equipos-de-uruguay-y-argentina-en-el-torneo-de-newcom-amigos-de-capibaras",
-   "resumen": "Durante este fin de semana se desarrolló en el estadio cerrado del Polideportivo Ernesto de León el Torneo de Newcom “Amigos de Capibaras”, organizado por el equipo duraznense Capibaras, con la participación de delegaciones de Uruguay y Argentina.",
-   "contenido": "La competencia se extendió durante todo el fin de semana, con entrada gratuita para el público, como una nueva instancia de encuentro, integración y actividad deportiva.<div><br><div>El Newcom es una disciplina derivada del voleibol, con reglas adaptadas especialmente para personas mayores, que ha experimentado un importante crecimiento en Durazno. Actualmente cuenta con varias categorías, entrenamientos periódicos y participación en competencias nacionales e internacionales.</div><div><br></div><div>Más allá de los resultados deportivos, esta disciplina cumple un importante papel en la promoción de la actividad física, el bienestar y la integración social, brindando a muchas personas la posibilidad de incorporarse al deporte y mantener una vida activa.</div><h2>Capibaras y sus destacados resultados deportivos</h2><div><figure><a href=\"/uploads/33163eccd0b04918b5994efe356c2bc6.jpg\" class=\"lightbox\"><img src=\"/uploads/33163eccd0b04918b5994efe356c2bc6.jpg\" alt=\"\" loading=\"lazy\" class=\"w-full rounded-xl\"></a></figure><p><br></p></div><div><br></div><div>El docente y jugador Robert Sueiro destacó el crecimiento del equipo duraznense y los logros alcanzados en distintas competencias.</div><div><br></div><div>Entre los resultados más recientes se encuentra la obtención de un campeonato internacional disputado en Argentina, en la categoría +50 mixto.</div><div><br></div><div>A nivel nacional, Capibaras también ha consolidado una destacada trayectoria, con seis títulos consecutivos obtenidos en las categorías +50 masculino y +50 mixto.</div><div><br></div><div>Estos resultados reflejan el desarrollo que ha alcanzado el Newcom en Durazno, combinando la práctica deportiva, la competencia y la integración entre participantes de distintas edades y procedencias.</div><div><br></div></div>",
-   "categoria_nombre": "Noticias departamentales",
-   "fecha": "16 de noviembre, 2026",
-   "fecha_publicacion": "2026-11-16T12:12:00+00:00",
-   "imagen": "https://raw.githubusercontent.com/Unseen26uy/durazno-feed/main/media/4f280bc7728e9a93d6d9d351.jpg",
-   "og_imagen": "https://raw.githubusercontent.com/Unseen26uy/durazno-feed/main/media/4f280bc7728e9a93d6d9d351.jpg"
   }
  ]
 }
